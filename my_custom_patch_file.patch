@@ -1,0 +1,72 @@
+diff --git a/platforms/common/include/px4_platform_common/defines.h b/platforms/common/include/px4_platform_common/defines.h
+index 38d7b4201f..6c7fb2abcd 100644
+--- a/platforms/common/include/px4_platform_common/defines.h
++++ b/platforms/common/include/px4_platform_common/defines.h
+@@ -39,8 +39,8 @@
+ 
+ #pragma once
+ 
+-#include <sys/ioctl.h>
+-#include <px4_boardconfig.h>
++//#include <sys/ioctl.h>
++//#include <px4_boardconfig.h>
+ 
+ 
+ /****************************************************************************
+diff --git a/src/lib/geo/geo.h b/src/lib/geo/geo.h
+index 30cc10b6fe..a869e85164 100644
+--- a/src/lib/geo/geo.h
++++ b/src/lib/geo/geo.h
+@@ -48,10 +48,10 @@
+ #include <stdbool.h>
+ #include <stdint.h>
+ 
+-#include <drivers/drv_hrt.h>
++//#include <drivers/drv_hrt.h>
+ 
+-#include <lib/mathlib/mathlib.h>
+-#include <lib/matrix/matrix/math.hpp>
++#include <mathlib/mathlib.h>
++#include <matrix/math.hpp>
+ 
+ static constexpr float CONSTANTS_ONE_G = 9.80665f;						// m/s^2
+ static constexpr double CONSTANTS_RADIUS_OF_EARTH = 6371000;					// meters (m)
+diff --git a/src/lib/mathlib/math/Functions.hpp b/src/lib/mathlib/math/Functions.hpp
+index 7fb54442d9..89adf7bcb2 100644
+--- a/src/lib/mathlib/math/Functions.hpp
++++ b/src/lib/mathlib/math/Functions.hpp
+@@ -42,7 +42,7 @@
+ #include "Limits.hpp"
+ 
+ #include <px4_platform_common/defines.h>
+-#include <matrix/matrix/math.hpp>
++#include <matrix/math.hpp>
+ 
+ namespace math
+ {
+diff --git a/src/modules/ekf2/EKF/estimator_interface.h b/src/modules/ekf2/EKF/estimator_interface.h
+index e94d14b5e6..117380030f 100644
+--- a/src/modules/ekf2/EKF/estimator_interface.h
++++ b/src/modules/ekf2/EKF/estimator_interface.h
+@@ -71,7 +71,7 @@
+ # include "sensor_range_finder.hpp"
+ #endif // CONFIG_EKF2_RANGE_FINDER
+ 
+-#include <lib/atmosphere/atmosphere.h>
++#include <atmosphere/atmosphere.h>
+ #include <matrix/math.hpp>
+ #include <mathlib/mathlib.h>
+ #include <mathlib/math/filter/AlphaFilter.hpp>
+diff --git a/src/modules/ekf2/EKF/output_predictor.h b/src/modules/ekf2/EKF/output_predictor.h
+index ee5cc0f710..1b7fb44d74 100644
+--- a/src/modules/ekf2/EKF/output_predictor.h
++++ b/src/modules/ekf2/EKF/output_predictor.h
+@@ -39,7 +39,7 @@
+ #include "common.h"
+ #include "RingBuffer.h"
+ 
+-#include <lib/geo/geo.h>
++#include <geo/geo.h>
+ 
+ class OutputPredictor
+ {
