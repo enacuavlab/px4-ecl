@@ -29,6 +29,12 @@ TODO
 ----------------------------------------------
 cp ~/Tmp/px4-ecl/my_custom_patch_file.patch
 
+----------------------------------------------
+git clone git@github.com:enacuavlab/paparazzi.git
+cd paparazzi
+git checkout opticflow_MTF01 
+make
+
 ln -s ~/Project/paparazzi/sw/ext/ecl  ~/Tmp/px4-ecl
 
 export PAPARAZZI_SRC=/home/pprz/Projects/paparazzi
