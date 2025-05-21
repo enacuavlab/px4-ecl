@@ -35,6 +35,8 @@ cd paparazzi
 git checkout opticflow_MTF01 
 make
 
+cp conf/airframes/ENAC/conf_enac_vto.xml conf/conf.xml
+
 ln -s ~/Project/paparazzi/sw/ext/ecl  ~/Tmp/px4-ecl
 
 export PAPARAZZI_SRC=/home/pprz/Projects/paparazzi
