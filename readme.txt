@@ -1,10 +1,12 @@
 cd ~/Tmp
 git clone https://github.com/PX4/PX4-Autopilot.git
+(491.46 Mio)
 cd PX4-Autopilot/
 git checkout v1.15.4
 
 ~/Tmp
 git clone git@github.com:enacuavlab/px4-ecl.git
+(470.63 Kio)
 
 ----------------------------------------------
 cd px4-ecl
