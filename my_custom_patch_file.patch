@@ -102,6 +102,18 @@ index e94d14b5e6..117380030f 100644
  #include <matrix/math.hpp>
  #include <mathlib/mathlib.h>
  #include <mathlib/math/filter/AlphaFilter.hpp>
+diff --git a/src/modules/ekf2/EKF/imu_down_sampler.cpp b/src/modules/ekf2/EKF/imu_down_sampler.cpp
+index 02f43a12f5..10c475ffe2 100644
+--- a/src/modules/ekf2/EKF/imu_down_sampler.cpp
++++ b/src/modules/ekf2/EKF/imu_down_sampler.cpp
+@@ -1,6 +1,6 @@
+ #include "imu_down_sampler.hpp"
+ 
+-#include <lib/mathlib/mathlib.h>
++#include <mathlib/mathlib.h>
+ 
+ ImuDownSampler::ImuDownSampler(int32_t &target_dt_us) : _target_dt_us(target_dt_us)
+ {
 diff --git a/src/modules/ekf2/EKF/output_predictor.h b/src/modules/ekf2/EKF/output_predictor.h
 index ee5cc0f710..1b7fb44d74 100644
 --- a/src/modules/ekf2/EKF/output_predictor.h
