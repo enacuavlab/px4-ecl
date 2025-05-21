@@ -19,6 +19,14 @@ ln -s /home/pprz/Tmp/PX4-Autopilot/src/modules/ekf2/EKF/python/ekf_derivation
 
 ln -s /home/pprz/Tmp/PX4-Autopilot/platforms/common/include/px4_platform_common
 
+ln -s /home/pprz/Tmp/PX4-Autopilot/Tools
+ln -s /home/pprz/Tmp/PX4-Autopilot/msg
+
+pip install empy==3.3.4
+
+./Tools/msg/px_generate_uorb_topic_files.py --headers -f msg/EstimatorAidSource1d.msg -e ./Tools/msg/templates/uorb/msg.h.em -o /home/pprz/Tmp
+
+
 ----------------------------------------------
 ln -s ~/Project/paparazzi/sw/ext/ecl  ~/Tmp/px4-ecl
 
