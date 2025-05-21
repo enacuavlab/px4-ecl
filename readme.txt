@@ -31,6 +31,7 @@ cp ~/Tmp/px4-ecl/my_custom_patch_file.patch
 
 ----------------------------------------------
 git clone git@github.com:enacuavlab/paparazzi.git
+(132.80 Mio)
 cd paparazzi
 git checkout opticflow_MTF01 
 make
