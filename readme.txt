@@ -10,26 +10,25 @@ git clone git@github.com:enacuavlab/px4-ecl.git
 
 ----------------------------------------------
 cd px4-ecl
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/modules/ekf2/EKF
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/lib/geo 
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/lib/world_magnetic_model 
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/lib/mathlib
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/lib/matrix/matrix
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/lib/atmosphere 
-
-ln -s /home/pprz/Tmp/PX4-Autopilot/src/modules/ekf2/EKF/python/ekf_derivation
-
-ln -s /home/pprz/Tmp/PX4-Autopilot/platforms/common/include/px4_platform_common
-
-ln -s /home/pprz/Tmp/PX4-Autopilot/Tools
-ln -s /home/pprz/Tmp/PX4-Autopilot/msg
+ln -s ../PX4-Autopilot/src/modules/ekf2/EKF
+ln -s ../PX4-Autopilot/src/lib/geo 
+ln -s ../PX4-Autopilot/src/lib/world_magnetic_model 
+ln -s ../PX4-Autopilot/src/lib/mathlib
+ln -s ../PX4-Autopilot/src/lib/matrix/matrix
+ln -s ../PX4-Autopilot/src/lib/atmosphere 
+ln -s ../PX4-Autopilot/src/modules/ekf2/EKF/python/ekf_derivation
+ln -s ../PX4-Autopilot/platforms/common/include/px4_platform_common
+ln -s ../PX4-Autopilot/Tools
+ln -s ../PX4-Autopilot/msg
 
 pip install empy==3.3.4
 
+TODO
 ./Tools/msg/px_generate_uorb_topic_files.py --headers -f msg/EstimatorAidSource1d.msg -e ./Tools/msg/templates/uorb/msg.h.em -o /home/pprz/Tmp
 
-
 ----------------------------------------------
+cp ~/Tmp/px4-ecl/my_custom_patch_file.patch
+
 ln -s ~/Project/paparazzi/sw/ext/ecl  ~/Tmp/px4-ecl
 
 export PAPARAZZI_SRC=/home/pprz/Projects/paparazzi
@@ -38,21 +37,9 @@ make -C /home/pprz/Projects/paparazzi -f Makefile.ac AIRCRAFT=octave_102 clean_a
 make -C /home/pprz/Projects/paparazzi -f Makefile.ac AIRCRAFT=octave_102 ap.compile
 
 ----------------------------------------------
-git diff > my_custom_patch_file.patch
-git apply patch_file.patch
-
-----------------------------------------------
-lrwxrwxrwx 1 pprz pprz   47 mai   20 14:43 atmosphere -> /home/pprz/Tmp/PX4-Autopilot/src/lib/atmosphere
-lrwxrwxrwx 1 pprz pprz   49 mai   20 13:32 EKF -> /home/pprz/Tmp/PX4-Autopilot/src/modules/ekf2/EKF
-lrwxrwxrwx 1 pprz pprz   72 mai   20 14:45 ekf_derivation -> /home/pprz/Tmp/PX4-Autopilot/src/modules/ekf2/EKF/python/ekf_derivation/
-lrwxrwxrwx 1 pprz pprz   40 mai   20 14:16 geo -> /home/pprz/Tmp/PX4-Autopilot/src/lib/geo
-drwxrwxr-x 8 pprz pprz 4096 mai   20 14:52 .git
-lrwxrwxrwx 1 pprz pprz   44 mai   20 14:19 mathlib -> /home/pprz/Tmp/PX4-Autopilot/src/lib/mathlib
-lrwxrwxrwx 1 pprz pprz   51 mai   20 14:41 matrix -> /home/pprz/Tmp/PX4-Autopilot/src/lib/matrix/matrix/
--rw-rw-r-- 1 pprz pprz 2304 mai   20 14:50 my_custom_patch_file.patch
-lrwxrwxrwx 1 pprz pprz   73 mai   20 14:05 px4_platform_common -> /home/pprz/Tmp/PX4-Autopilot/platforms/common/include/px4_platform_common
--rw-rw-r-- 1 pprz pprz 1377 mai   20 14:51 readme.txt
-lrwxrwxrwx 1 pprz pprz   57 mai   20 14:18 world_magnetic_model -> /home/pprz/Tmp/PX4-Autopilot/src/lib/world_magnetic_model
+cd ~/Tmp/PX4-Autopilot
+git diff > ../px4-ecl/my_custom_patch_file.patch
+git apply ../px4-ecl/my_custom_patch_file.patch
 
 ----------------------------------------------
 TODO 
