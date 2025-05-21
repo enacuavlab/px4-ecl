@@ -14,10 +14,16 @@ index 38d7b4201f..6c7fb2abcd 100644
  
  /****************************************************************************
 diff --git a/src/lib/geo/geo.h b/src/lib/geo/geo.h
-index 30cc10b6fe..a869e85164 100644
+index 30cc10b6fe..7ea7acafbe 100644
 --- a/src/lib/geo/geo.h
 +++ b/src/lib/geo/geo.h
-@@ -48,10 +48,10 @@
+@@ -45,13 +45,16 @@
+ 
+ #pragma once
+ 
++#include "ecl.h"
++
++
  #include <stdbool.h>
  #include <stdint.h>
  
@@ -44,6 +50,45 @@ index 7fb54442d9..89adf7bcb2 100644
  
  namespace math
  {
+diff --git a/src/modules/ekf2/EKF/aid_sources/EstimatorAidSource.hpp b/src/modules/ekf2/EKF/aid_sources/EstimatorAidSource.hpp
+index 6d6c9e8ec2..55c45932cf 100644
+--- a/src/modules/ekf2/EKF/aid_sources/EstimatorAidSource.hpp
++++ b/src/modules/ekf2/EKF/aid_sources/EstimatorAidSource.hpp
+@@ -36,7 +36,7 @@
+ 
+ #include <cstdint>
+ 
+-#include <lib/matrix/matrix/math.hpp>
++#include <matrix/math.hpp>
+ 
+ // forward declarations
+ class Ekf;
+diff --git a/src/modules/ekf2/EKF/drag_fusion.cpp b/src/modules/ekf2/EKF/drag_fusion.cpp
+index 5b4baedf12..6176646b6b 100644
+--- a/src/modules/ekf2/EKF/drag_fusion.cpp
++++ b/src/modules/ekf2/EKF/drag_fusion.cpp
+@@ -41,7 +41,7 @@
+ #include <ekf_derivation/generated/compute_drag_y_innov_var_and_h.h>
+ 
+ #include <mathlib/mathlib.h>
+-#include <lib/atmosphere/atmosphere.h>
++#include <atmosphere/atmosphere.h>
+ 
+ void Ekf::controlDragFusion(const imuSample &imu_delayed)
+ {
+diff --git a/src/modules/ekf2/EKF/ekf_helper.cpp b/src/modules/ekf2/EKF/ekf_helper.cpp
+index afff6dc0ca..1feff04e3c 100644
+--- a/src/modules/ekf2/EKF/ekf_helper.cpp
++++ b/src/modules/ekf2/EKF/ekf_helper.cpp
+@@ -42,7 +42,7 @@
+ #include "ekf.h"
+ 
+ #include <mathlib/mathlib.h>
+-#include <lib/world_magnetic_model/geo_mag_declination.h>
++#include <world_magnetic_model/geo_mag_declination.h>
+ #include <cstdlib>
+ 
+ bool Ekf::isHeightResetRequired() const
 diff --git a/src/modules/ekf2/EKF/estimator_interface.h b/src/modules/ekf2/EKF/estimator_interface.h
 index e94d14b5e6..117380030f 100644
 --- a/src/modules/ekf2/EKF/estimator_interface.h
