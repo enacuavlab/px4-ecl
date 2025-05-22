@@ -76,6 +76,26 @@ index 5b4baedf12..6176646b6b 100644
  
  void Ekf::controlDragFusion(const imuSample &imu_delayed)
  {
+diff --git a/src/modules/ekf2/EKF/ekf.h b/src/modules/ekf2/EKF/ekf.h
+index b0ca385d90..b34e1f50d8 100644
+--- a/src/modules/ekf2/EKF/ekf.h
++++ b/src/modules/ekf2/EKF/ekf.h
+@@ -40,8 +40,7 @@
+  *
+  */
+ 
+-#ifndef EKF_EKF_H
+-#define EKF_EKF_H
++#pragma once
+ 
+ #include "estimator_interface.h"
+ 
+@@ -1227,5 +1226,3 @@ private:
+ 	AuxGlobalPosition _aux_global_position{};
+ #endif // CONFIG_EKF2_AUX_GLOBAL_POSITION
+ };
+-
+-#endif // !EKF_EKF_H
 diff --git a/src/modules/ekf2/EKF/ekf_helper.cpp b/src/modules/ekf2/EKF/ekf_helper.cpp
 index afff6dc0ca..1feff04e3c 100644
 --- a/src/modules/ekf2/EKF/ekf_helper.cpp
