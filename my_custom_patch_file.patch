@@ -147,3 +147,31 @@ index ee5cc0f710..1b7fb44d74 100644
  
  class OutputPredictor
  {
+diff --git a/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.cpp b/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.cpp
+index c8655827be..d465cd2273 100644
+--- a/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.cpp
++++ b/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.cpp
+@@ -35,7 +35,7 @@
+ 
+ #include <cstdlib>
+ 
+-#include <lib/geo/geo.h> // CONSTANTS_ONE_G
++#include <geo/geo.h> // CONSTANTS_ONE_G
+ 
+ #include "derivation/generated/yaw_est_predict_covariance.h"
+ #include "derivation/generated/yaw_est_compute_measurement_update.h"
+diff --git a/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.h b/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.h
+index ec84ed06f9..37c6fb7842 100644
+--- a/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.h
++++ b/src/modules/ekf2/EKF/yaw_estimator/EKFGSF_yaw.h
+@@ -34,8 +34,8 @@
+ #ifndef EKF_EKFGSF_YAW_H
+ #define EKF_EKFGSF_YAW_H
+ 
+-#include <lib/mathlib/mathlib.h>
+-#include <lib/matrix/matrix/math.hpp>
++#include <mathlib/mathlib.h>
++#include <matrix/math.hpp>
+ 
+ static constexpr uint8_t N_MODELS_EKFGSF = 5;
+ 

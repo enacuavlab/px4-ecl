@@ -23,12 +23,6 @@ ln -s ../PX4-Autopilot/msg
 
 pip install empy==3.3.4
 
-TODO
-./Tools/msg/px_generate_uorb_topic_files.py --headers -f msg/EstimatorAidSource1d.msg -e ./Tools/msg/templates/uorb/msg.h.em -o /home/pprz/Tmp
-
-----------------------------------------------
-cp ~/Tmp/px4-ecl/my_custom_patch_file.patch
-
 ----------------------------------------------
 git clone git@github.com:enacuavlab/paparazzi.git
 (132.80 Mio)
@@ -52,4 +46,9 @@ git apply ../px4-ecl/my_custom_patch_file.patch
 
 ----------------------------------------------
 TODO 
+keep compiling modifying :
+- sw/airborne/modules/ins/ins_ekf2.cpp
+- conf/modules/ins_ekf2.xml
+
+
 /home/pprz/Projects/paparazzi/sw/ext/ecl/EKF/ekf.h:58:10: fatal error: uORB/topics/estimator_aid_source1d.h: No such file or directory
