@@ -76,26 +76,6 @@ index 5b4baedf12..6176646b6b 100644
  
  void Ekf::controlDragFusion(const imuSample &imu_delayed)
  {
-diff --git a/src/modules/ekf2/EKF/ekf.h b/src/modules/ekf2/EKF/ekf.h
-index b0ca385d90..b34e1f50d8 100644
---- a/src/modules/ekf2/EKF/ekf.h
-+++ b/src/modules/ekf2/EKF/ekf.h
-@@ -40,8 +40,7 @@
-  *
-  */
- 
--#ifndef EKF_EKF_H
--#define EKF_EKF_H
-+#pragma once
- 
- #include "estimator_interface.h"
- 
-@@ -1227,5 +1226,3 @@ private:
- 	AuxGlobalPosition _aux_global_position{};
- #endif // CONFIG_EKF2_AUX_GLOBAL_POSITION
- };
--
--#endif // !EKF_EKF_H
 diff --git a/src/modules/ekf2/EKF/ekf_helper.cpp b/src/modules/ekf2/EKF/ekf_helper.cpp
 index afff6dc0ca..1feff04e3c 100644
 --- a/src/modules/ekf2/EKF/ekf_helper.cpp
@@ -122,6 +102,19 @@ index e94d14b5e6..117380030f 100644
  #include <matrix/math.hpp>
  #include <mathlib/mathlib.h>
  #include <mathlib/math/filter/AlphaFilter.hpp>
+diff --git a/src/modules/ekf2/EKF/gps_checks.cpp b/src/modules/ekf2/EKF/gps_checks.cpp
+index 71018df1c7..66634a3b5d 100644
+--- a/src/modules/ekf2/EKF/gps_checks.cpp
++++ b/src/modules/ekf2/EKF/gps_checks.cpp
+@@ -42,7 +42,7 @@
+ #include "ekf.h"
+ 
+ #if defined(CONFIG_EKF2_MAGNETOMETER)
+-# include <lib/world_magnetic_model/geo_mag_declination.h>
++# include <world_magnetic_model/geo_mag_declination.h>
+ #endif // CONFIG_EKF2_MAGNETOMETER
+ 
+ #include <mathlib/mathlib.h>
 diff --git a/src/modules/ekf2/EKF/imu_down_sampler.cpp b/src/modules/ekf2/EKF/imu_down_sampler.cpp
 index 02f43a12f5..10c475ffe2 100644
 --- a/src/modules/ekf2/EKF/imu_down_sampler.cpp
