@@ -45,10 +45,11 @@ git diff > ../px4-ecl/my_custom_patch_file.patch
 git apply ../px4-ecl/my_custom_patch_file.patch
 
 ----------------------------------------------
-TODO 
 keep compiling modifying :
 - sw/airborne/modules/ins/ins_ekf2.cpp
 - conf/modules/ins_ekf2.xml
 
+TODO
 
-/home/pprz/Projects/paparazzi/sw/ext/ecl/EKF/ekf.h:58:10: fatal error: uORB/topics/estimator_aid_source1d.h: No such file or directory
+/home/pprz/Projects/paparazzi/sw/ext/ecl/ekf_derivation/generated/state.h:36:25: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+   36 |                 return *reinterpret_cast<matrix::Vector<float, 24>*>(const_cast<float*>(reinterpret_cast<const float*>(&quat_nominal)));
