@@ -38,6 +38,7 @@ export PAPARAZZI_SRC=/home/pprz/Projects/paparazzi
 export PAPARAZZI_HOME=/home/pprz/Projects/paparazzi
 make -C /home/pprz/Projects/paparazzi -f Makefile.ac AIRCRAFT=octave_102 clean_ac
 make -C /home/pprz/Projects/paparazzi -f Makefile.ac AIRCRAFT=octave_102 ap.compile
+make -C /home/pprz/Projects/paparazzi -f Makefile.ac AIRCRAFT=octave_102 ap.upload
 
 ----------------------------------------------
 cd ~/Tmp/PX4-Autopilot
