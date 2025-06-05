@@ -48,9 +48,10 @@ git apply ../px4-ecl/my_custom_patch_file.patch
 ----------------------------------------------
 keep compiling modifying :
 - sw/airborne/modules/ins/ins_ekf2.cpp
-- conf/modules/ins_ekf2.xml
 
-TODO
+https://github.com/PX4/PX4-user_guide/blob/main/tr/advanced_config/parameter_reference.md
+
+ISSUE
 
 /home/pprz/Projects/paparazzi/sw/ext/ecl/ekf_derivation/generated/state.h:36:25: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
    36 |                 return *reinterpret_cast<matrix::Vector<float, 24>*>(const_cast<float*>(reinterpret_cast<const float*>(&quat_nominal)));
